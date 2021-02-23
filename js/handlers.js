@@ -1,5 +1,5 @@
 /* 
-This file contains onChange and onBlur handlers.
+This file contains onInput and onChange handlers.
 */
 
 import { setCurrent, getCurrent, getPercentage, getRemained } from './state.js'
@@ -17,24 +17,35 @@ export const updateSubject = (subj, currentValue) => {
   updateReportSpan(reportSpan, pagesCount[subj], getRemained(subj))
 }
 
+export const onInputHandlers = {
+  math: (evt) => {
+    updateSubject('math', evt.target.value)
+  },
+  phys: (evt) => {
+    updateSubject('phys', evt.target.value)
+  },
+  chem: (evt) => {
+    updateSubject('chem', evt.target.value)
+  },
+  biol: (evt) => {
+    updateSubject('biol', evt.target.value)
+  },
+}
+
 const updateLocalStorage = (subj) =>
   localStorage.setItem(subj, getCurrent(subj))
 
 export const onChangeHandlers = {
-  math: (evt) => {
-    updateSubject('math', evt.target.value)
+  math: () => {
     updateLocalStorage('math')
   },
-  phys: (evt) => {
-    updateSubject('phys', evt.target.value)
+  phys: () => {
     updateLocalStorage('phys')
   },
-  chem: (evt) => {
-    updateSubject('chem', evt.target.value)
+  chem: () => {
     updateLocalStorage('chem')
   },
-  biol: (evt) => {
-    updateSubject('biol', evt.target.value)
+  biol: () => {
     updateLocalStorage('biol')
   },
 }

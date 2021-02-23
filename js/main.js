@@ -5,7 +5,7 @@ This file contains the main website logic
 
 import { pages, totalPagesCount } from './constants.js'
 import { updateProgressbar, updateReportSpan } from './dom.js'
-import { updateSubject, onChangeHandlers } from './handlers.js'
+import { updateSubject, onInputHandlers, onChangeHandlers } from './handlers.js'
 import {
   setCurrent,
   getPercentagesAvg,
@@ -33,7 +33,8 @@ window.onload = () => {
   /* Add event listeners */
   const pagesInputs = document.getElementsByClassName('pages-input')
   for (const elm of pagesInputs) {
-    elm.addEventListener('change', (evt) => handleChange(evt, elm.id))
+    elm.addEventListener('input', (evt) => handleInput(evt, elm.id))
+    elm.addEventListener('change', () => handleChange(elm.id))
   }
 
   /* Total frame */
@@ -48,23 +49,23 @@ const updateTotal = () => {
   updateReportSpan(totalReport, totalPagesCount, getTotalRemainder())
 }
 
-/* Global input onChange handler */
-const handleChange = (evt, elemID) => {
+/* Global input onInput handler */
+const handleInput = (evt, elemID) => {
   switch (elemID) {
     case 'math-input':
-      onChangeHandlers.math(evt)
+      onInputHandlers.math(evt)
       break
 
     case 'phys-input':
-      onChangeHandlers.phys(evt)
+      onInputHandlers.phys(evt)
       break
 
     case 'chem-input':
-      onChangeHandlers.chem(evt)
+      onInputHandlers.chem(evt)
       break
 
     case 'biol-input':
-      onChangeHandlers.biol(evt)
+      onInputHandlers.biol(evt)
       break
 
     default:
@@ -74,4 +75,29 @@ const handleChange = (evt, elemID) => {
 
   /* Total frame */
   updateTotal()
+}
+
+/* Global input onChange handler */
+const handleChange = (elemID) => {
+  switch (elemID) {
+    case 'math-input':
+      onChangeHandlers.math()
+      break
+
+    case 'phys-input':
+      onChangeHandlers.phys()
+      break
+
+    case 'chem-input':
+      onChangeHandlers.chem()
+      break
+
+    case 'biol-input':
+      onChangeHandlers.biol()
+      break
+
+    default:
+      console.log('Invalid Input ID: ' + elemID)
+      return
+  }
 }
