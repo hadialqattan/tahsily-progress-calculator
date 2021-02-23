@@ -10,7 +10,7 @@ import {
   setCurrent,
   getPercentagesAvg,
   getTotalRemainder,
-  getCurrent
+  getCurrent,
 } from './state.js'
 
 // Main Entry point
@@ -24,7 +24,7 @@ window.onload = () => {
     }
 
     /* Update input slider value */
-    document.getElementById(subject+'-input').value = getCurrent(subject)
+    document.getElementById(subject + '-input').value = getCurrent(subject)
 
     /* Update subject state and display data */
     updateSubject(subject, getCurrent(subject))

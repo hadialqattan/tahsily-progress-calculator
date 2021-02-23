@@ -4,7 +4,7 @@ This file contains onChange and onBlur handlers.
 
 import { setCurrent, getCurrent, getPercentage, getRemained } from './state.js'
 import { updateProgressbar, updateReportSpan } from './dom.js'
-import { pagesCount} from './constants.js'
+import { pagesCount } from './constants.js'
 
 export const updateSubject = (subj, currentValue) => {
   // Update state.

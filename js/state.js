@@ -74,7 +74,7 @@ const getTotalRemainder = () => {
     sum += currentState[subj].remained
   }
   return sum
-} 
+}
 
 // Export only setters and getter.
 export {
@@ -85,5 +85,5 @@ export {
   getPercentage,
   getRemained,
   getPercentagesAvg,
-  getTotalRemainder
+  getTotalRemainder,
 }

@@ -14,7 +14,8 @@ const updateProgressbar = (elm, newPercentage) => {
 /* update the given report span */
 const updateReportSpan = (elm, totalPages, remainedPages) => {
   elm.innerHTML =
-    (totalPages - remainedPages) +
+    totalPages -
+    remainedPages +
     ' out of ' +
     totalPages +
     ' pages, remained ' +
