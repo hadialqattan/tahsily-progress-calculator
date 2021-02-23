@@ -22,19 +22,19 @@ const updateLocalStorage = (subj) =>
 
 export const onChangeHandlers = {
   math: (evt) => {
-    updateLocalStorage('math')
     updateSubject('math', evt.target.value)
+    updateLocalStorage('math')
   },
   phys: (evt) => {
-    updateLocalStorage('phys')
     updateSubject('phys', evt.target.value)
+    updateLocalStorage('phys')
   },
   chem: (evt) => {
-    updateLocalStorage('chem')
     updateSubject('chem', evt.target.value)
+    updateLocalStorage('chem')
   },
   biol: (evt) => {
-    updateLocalStorage('biol')
     updateSubject('biol', evt.target.value)
+    updateLocalStorage('biol')
   },
 }
