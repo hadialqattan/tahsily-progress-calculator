@@ -2,14 +2,14 @@
 This file contains core constants.
 */
 
-import { getPagesCount } from './math'
+import { getPagesCount } from './math.js'
 
 // subjectName: {first: (first page num),  last: (last page num)}
 const pages = {
   math: { first: 6, last: 87 },
-  phys: { first: 155, last: 90 },
-  chem: { first: 231, last: 162 },
-  biol: { first: 302, last: 234 },
+  phys: { first: 90, last: 155 },
+  chem: { first: 162, last: 231 },
+  biol: { first: 234, last: 302 },
 }
 
 // Pages count as const to avoid recalculating.
@@ -21,7 +21,7 @@ const pagesCount = {
 }
 
 // Total pages count based on the above constants.
-const totalPagesCount = pagesCount.values().reduce((a, b) => a + b)
+const totalPagesCount = Object.values(pagesCount).reduce((a, b) => a + b)
 
 // All.
 export { pages, pagesCount, totalPagesCount }

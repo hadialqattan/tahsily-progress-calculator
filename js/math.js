@@ -12,7 +12,7 @@ const getRemainedPages = (currentPageNum, subjectPages, subjectPagesCount) =>
 
 /* Calculate done percentage based on remained pages */
 const getDonePercentage = (subjectPagesCount, remainedPages) =>
-  ((subjectPagesCount - remainedPages) / subjectPagesCount) * 100
+  Math.round(((subjectPagesCount - remainedPages) / subjectPagesCount) * 100)
 
 // All.
 export { getPagesCount, getRemainedPages, getDonePercentage }

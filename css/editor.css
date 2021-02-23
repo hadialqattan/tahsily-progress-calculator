@@ -3415,7 +3415,7 @@ pre {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.4rem 0.5rem;
+  padding: 0.4rem 0rem;
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
@@ -3435,7 +3435,7 @@ pre {
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+    /* box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); */ }
   .form-control::placeholder {
     color: #6c757d;
     opacity: 1; }
@@ -12045,5 +12045,3 @@ input[type="number"]:focus {
 
 .btn-group .btn i {
   vertical-align: middle; }
-
-/*# sourceMappingURL=editor.css.map */

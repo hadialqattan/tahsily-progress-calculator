@@ -2,35 +2,50 @@
 This file contains onChange and onBlur handlers.
 */
 
-import { getRemainedPages, getDonePercentage } from './math'
-import { pages, pagesCount, totalPagesCount } from './constants'
+import { setCurrent, getCurrent, getPercentage, getRemained } from './state.js'
+import { updateProgressbar, updateReportSpan } from './dom.js'
+import { pagesCount} from './constants.js'
 
-export const updateTotal = (currentPages) => {
-  let totalProgressbar = document.getElementById('total-progress')
-  let totalReport = document.getElementById('total-report')
+export const updateSubject = (subj, currentValue) => {
+  // Update state.
+  setCurrent(subj, currentValue, true)
 
-  let classListLength = totalProgressbar.classList.length
-  totalProgressbar.classList[classListLength - 1] = 70
+  // Update display data.
+  let progressbar = document.getElementById(subj + '-progress')
+  let reportSpan = document.getElementById(subj + '-report')
+  updateProgressbar(progressbar, getPercentage(subj))
+  updateReportSpan(reportSpan, pagesCount[subj], getRemained(subj))
 }
 
 export const onChangeHandlers = {
-  math: (evt, currentPages) => {},
-  phys: (evt, currentPages) => {},
-  chem: (evt, currentPages) => {},
-  biol: (evt, currentPages) => {},
+  math: (evt) => {
+    updateSubject('math', evt.target.value)
+  },
+  phys: (evt) => {
+    updateSubject('phys', evt.target.value)
+  },
+  chem: (evt) => {
+    updateSubject('chem', evt.target.value)
+  },
+  biol: (evt) => {
+    updateSubject('biol', evt.target.value)
+  },
 }
 
+const updateLocalStorage = (subj) =>
+  localStorage.setItem(subj, getCurrent(subj))
+
 export const onBlurHandlers = {
-  math: (currentPages) => {
-    localStorage.setItem('math', currentPages.math)
+  math: () => {
+    updateLocalStorage('math')
   },
-  phys: (currentPages) => {
-    localStorage.setItem('phys', currentPages.phys)
+  phys: () => {
+    updateLocalStorage('phys')
   },
-  chem: (currentPages) => {
-    localStorage.setItem('chem', currentPages.chem)
+  chem: () => {
+    updateLocalStorage('chem')
   },
-  biol: (currentPages) => {
-    localStorage.setItem('biol', currentPages.biol)
+  biol: () => {
+    updateLocalStorage('biol')
   },
 }
