@@ -17,35 +17,24 @@ export const updateSubject = (subj, currentValue) => {
   updateReportSpan(reportSpan, pagesCount[subj], getRemained(subj))
 }
 
-export const onChangeHandlers = {
-  math: (evt) => {
-    updateSubject('math', evt.target.value)
-  },
-  phys: (evt) => {
-    updateSubject('phys', evt.target.value)
-  },
-  chem: (evt) => {
-    updateSubject('chem', evt.target.value)
-  },
-  biol: (evt) => {
-    updateSubject('biol', evt.target.value)
-  },
-}
-
 const updateLocalStorage = (subj) =>
   localStorage.setItem(subj, getCurrent(subj))
 
-export const onBlurHandlers = {
-  math: () => {
+export const onChangeHandlers = {
+  math: (evt) => {
     updateLocalStorage('math')
+    updateSubject('math', evt.target.value)
   },
-  phys: () => {
+  phys: (evt) => {
     updateLocalStorage('phys')
+    updateSubject('phys', evt.target.value)
   },
-  chem: () => {
+  chem: (evt) => {
     updateLocalStorage('chem')
+    updateSubject('chem', evt.target.value)
   },
-  biol: () => {
+  biol: (evt) => {
     updateLocalStorage('biol')
+    updateSubject('biol', evt.target.value)
   },
 }

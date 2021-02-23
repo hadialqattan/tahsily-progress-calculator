@@ -5,7 +5,7 @@ This file contains the main website logic
 
 import { pages, totalPagesCount } from './constants.js'
 import { updateProgressbar, updateReportSpan } from './dom.js'
-import { updateSubject, onChangeHandlers, onBlurHandlers } from './handlers.js'
+import { updateSubject, onChangeHandlers } from './handlers.js'
 import {
   setCurrent,
   getPercentagesAvg,
@@ -34,7 +34,6 @@ window.onload = () => {
   const pagesInputs = document.getElementsByClassName('pages-input')
   for (const elm of pagesInputs) {
     elm.addEventListener('change', (evt) => handleChange(evt, elm.id))
-    elm.addEventListener('blur', (evt) => handleBlur(elm.id))
   }
 
   /* Total frame */
@@ -75,29 +74,4 @@ const handleChange = (evt, elemID) => {
 
   /* Total frame */
   updateTotal()
-}
-
-/* Global input onBlur handler */
-const handleBlur = (elemID) => {
-  switch (elemID) {
-    case 'math-input':
-      onBlurHandlers.math()
-      break
-
-    case 'phys-input':
-      onBlurHandlers.phys()
-      break
-
-    case 'chem-input':
-      onBlurHandlers.chem()
-      break
-
-    case 'biol-input':
-      onBlurHandlers.biol()
-      break
-
-    default:
-      console.log('Invalid Input ID: ' + elemID)
-      return
-  }
 }
