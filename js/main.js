@@ -11,11 +11,27 @@ import {
   getPercentagesAvg,
   getTotalRemainder,
   getCurrent,
+  setDate,
+  getDate,
 } from './state.js'
 
 // Main Entry point
 window.onload = () => {
   var cache
+
+  /* --- Dates state --- */
+  for (const datetype of ['target', 'test']) {
+    /* Load stored dates if any */
+    cache = localStorage.getItem(datetype + 'date')
+    if (cache) {
+      setDate(datetype, cache)
+    }
+
+    /* Update input date value */
+    document.getElementById(datetype + 'date-input').value = getDate(datetype)
+  }
+
+  /* --- Pages state --- */
   for (const subject in pages) {
     /* Load stored page nums if any */
     cache = localStorage.getItem(subject)
@@ -31,8 +47,8 @@ window.onload = () => {
   }
 
   /* Add event listeners */
-  const pagesInputs = document.getElementsByClassName('pages-input')
-  for (const elm of pagesInputs) {
+  const inputFields = document.getElementsByClassName('input-field')
+  for (const elm of inputFields) {
     elm.addEventListener('input', (evt) => handleInput(evt, elm.id))
     elm.addEventListener('change', () => handleChange(elm.id))
   }
@@ -51,6 +67,19 @@ const updateTotal = () => {
 
 /* Global input onInput handler */
 const handleInput = (evt, elemID) => {
+  switch (elemID) {
+    case 'targetdate-input':
+      onInputHandlers.targetDate(evt)
+      return
+
+    case 'testdate-input':
+      onInputHandlers.testDate(evt)
+      return
+
+    default:
+      break
+  }
+
   switch (elemID) {
     case 'math-input':
       onInputHandlers.math(evt)
@@ -79,6 +108,19 @@ const handleInput = (evt, elemID) => {
 
 /* Global input onChange handler */
 const handleChange = (elemID) => {
+  switch (elemID) {
+    case 'targetdate-input':
+      onChangeHandlers.targetDate()
+      return
+
+    case 'testdate-input':
+      onChangeHandlers.testDate()
+      return
+
+    default:
+      break
+  }
+
   switch (elemID) {
     case 'math-input':
       onChangeHandlers.math()

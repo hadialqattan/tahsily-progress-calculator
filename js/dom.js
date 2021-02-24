@@ -11,6 +11,11 @@ const updateProgressbar = (elm, newPercentage) => {
   elm.classList.add('w-' + newPercentage)
 }
 
+/* update subject-input value span */
+const updateInputValueSpan = (elm, currentValue) => {
+  elm.innerHTML = 'last page: ' + currentValue
+}
+
 /* update the given report span */
 const updateReportSpan = (elm, totalPages, remainedPages) => {
   elm.innerHTML =
@@ -23,4 +28,4 @@ const updateReportSpan = (elm, totalPages, remainedPages) => {
     ' pages'
 }
 
-export { updateProgressbar, updateReportSpan }
+export { updateProgressbar, updateInputValueSpan, updateReportSpan }

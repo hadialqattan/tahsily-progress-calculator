@@ -1,0 +1,23 @@
+/* This file contains some bootstrap override classes */
+
+.form-control {
+  padding: .25rem .5rem;
+}
+
+input[type="range"] {
+  padding: 0;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0;
+}
+
+.form-group {
+  margin-top: .5rem;
+  text-align: left;
+}
+
+/* not bootstrap */
+.input-span {
+  opacity: .5;
+}

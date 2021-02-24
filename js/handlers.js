@@ -2,19 +2,39 @@
 This file contains onInput and onChange handlers.
 */
 
-import { setCurrent, getCurrent, getPercentage, getRemained } from './state.js'
-import { updateProgressbar, updateReportSpan } from './dom.js'
 import { pagesCount } from './constants.js'
+import {
+  updateProgressbar,
+  updateInputValueSpan,
+  updateReportSpan,
+} from './dom.js'
+import {
+  setCurrent,
+  getCurrent,
+  getPercentage,
+  getRemained,
+  setDate,
+  getDate,
+} from './state.js'
 
 export const updateSubject = (subj, currentValue) => {
   // Update state.
   setCurrent(subj, currentValue, true)
 
   // Update display data.
+  let currentValueSpan = document.getElementById(subj + '-input-value')
   let progressbar = document.getElementById(subj + '-progress')
   let reportSpan = document.getElementById(subj + '-report')
+  updateInputValueSpan(currentValueSpan, currentValue)
   updateProgressbar(progressbar, getPercentage(subj))
   updateReportSpan(reportSpan, pagesCount[subj], getRemained(subj))
+}
+
+export const updateDate = (datetype, currentDate) => {
+  // Update state.
+  setDate(datetype, currentDate)
+
+  console.log(getDate(datetype))
 }
 
 export const onInputHandlers = {
@@ -30,22 +50,40 @@ export const onInputHandlers = {
   biol: (evt) => {
     updateSubject('biol', evt.target.value)
   },
+  targetDate: (evt) => {
+    updateDate('target', evt.target.value)
+  },
+  testDate: (evt) => {
+    updateDate('test', evt.target.value)
+  },
 }
 
-const updateLocalStorage = (subj) =>
+const updateSubjectLocalStorage = (subj) =>
   localStorage.setItem(subj, getCurrent(subj))
+
+const updateDateLocalStorage = (datetype) =>
+  localStorage.setItem(
+    datetype,
+    getDate(datetype.substring(0, datetype.length - 4))
+  )
 
 export const onChangeHandlers = {
   math: () => {
-    updateLocalStorage('math')
+    updateSubjectLocalStorage('math')
   },
   phys: () => {
-    updateLocalStorage('phys')
+    updateSubjectLocalStorage('phys')
   },
   chem: () => {
-    updateLocalStorage('chem')
+    updateSubjectLocalStorage('chem')
   },
   biol: () => {
-    updateLocalStorage('biol')
+    updateSubjectLocalStorage('biol')
+  },
+  targetDate: () => {
+    updateDateLocalStorage('targetdate')
+  },
+  testDate: () => {
+    updateDateLocalStorage('testdate')
   },
 }

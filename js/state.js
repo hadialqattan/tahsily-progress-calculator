@@ -5,8 +5,8 @@ This file contains user's state object.
 import { pages, pagesCount } from './constants.js'
 import { getDonePercentage, getRemainedPages } from './math.js'
 
-/* Initial state */
-const currentState = {
+/* Initial pages state */
+const pagesState = {
   math: {
     current: pages.math.first - 1,
     percentage: 0,
@@ -30,39 +30,39 @@ const currentState = {
 }
 
 const updatePercentage = (subj) => {
-  currentState[subj].percentage = getDonePercentage(
+  pagesState[subj].percentage = getDonePercentage(
     pagesCount[subj],
-    currentState[subj].remained
+    pagesState[subj].remained
   )
 }
 
 const updateRemained = (subj) => {
-  currentState[subj].remained = getRemainedPages(
-    currentState[subj].current,
+  pagesState[subj].remained = getRemainedPages(
+    pagesState[subj].current,
     pages[subj],
     pagesCount[subj]
   )
 }
 
 const setCurrent = (subj, currentPage, update = false) => {
-  currentState[subj].current = currentPage
+  pagesState[subj].current = currentPage
   if (update) {
     updateRemained(subj)
     updatePercentage(subj)
   }
 }
 
-const getCurrent = (subj) => currentState[subj].current
+const getCurrent = (subj) => pagesState[subj].current
 
-const getPercentage = (subj) => currentState[subj].percentage
+const getPercentage = (subj) => pagesState[subj].percentage
 
-const getRemained = (subj) => currentState[subj].remained
+const getRemained = (subj) => pagesState[subj].remained
 
 const getPercentagesAvg = () => {
   let sum = 0
   let i = 0
-  for (const subj in currentState) {
-    sum += currentState[subj].percentage
+  for (const subj in pagesState) {
+    sum += pagesState[subj].percentage
     i++
   }
   return Math.round(sum / i)
@@ -70,14 +70,25 @@ const getPercentagesAvg = () => {
 
 const getTotalRemainder = () => {
   let sum = 0
-  for (const subj in currentState) {
-    sum += currentState[subj].remained
+  for (const subj in pagesState) {
+    sum += pagesState[subj].remained
   }
   return sum
 }
 
+/* Initial dates state */
+const datesState = {
+  target: '',
+  test: '',
+}
+
+const setDate = (datetype, value) => (datesState[datetype] = value)
+
+const getDate = (datetype) => datesState[datetype]
+
 // Export only setters and getter.
 export {
+  // pages state.
   setCurrent,
   updatePercentage,
   updateRemained,
@@ -86,4 +97,7 @@ export {
   getRemained,
   getPercentagesAvg,
   getTotalRemainder,
+  // dates state.
+  setDate,
+  getDate,
 }
