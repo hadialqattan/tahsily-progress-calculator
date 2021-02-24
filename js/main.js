@@ -24,6 +24,21 @@ import {
 window.onload = () => {
   var cache
 
+  /* --- Pages state --- */
+  for (const subject in pages) {
+    /* Load stored page nums if any */
+    cache = localStorage.getItem(subject)
+    if (cache) {
+      setCurrent(subject, cache)
+    }
+
+    /* Update input slider value */
+    document.getElementById(subject + '-input').value = getCurrent(subject)
+
+    /* Update subject state and display data */
+    updateSubject(subject, getCurrent(subject))
+  }
+
   /* --- Dates state --- */
   for (const datetype of ['target', 'test']) {
     /* Load stored dates if any */
@@ -39,21 +54,6 @@ window.onload = () => {
 
     /* Update date state and display data */
     updateDate(datetype, getDate(datetype))
-  }
-
-  /* --- Pages state --- */
-  for (const subject in pages) {
-    /* Load stored page nums if any */
-    cache = localStorage.getItem(subject)
-    if (cache) {
-      setCurrent(subject, cache)
-    }
-
-    /* Update input slider value */
-    document.getElementById(subject + '-input').value = getCurrent(subject)
-
-    /* Update subject state and display data */
-    updateSubject(subject, getCurrent(subject))
   }
 
   /* Add event listeners */
