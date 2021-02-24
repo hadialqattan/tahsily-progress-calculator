@@ -2,11 +2,13 @@
 This file contains onInput and onChange handlers.
 */
 
-import { pagesCount } from './constants.js'
+import { getDaysDelta } from './math.js'
+import { todayDate, pagesCount } from './constants.js'
 import {
   updateProgressbar,
   updateInputValueSpan,
   updateReportSpan,
+  updateDateRemainderSpan,
 } from './dom.js'
 import {
   setCurrent,
@@ -34,7 +36,12 @@ export const updateDate = (datetype, currentDate) => {
   // Update state.
   setDate(datetype, currentDate)
 
-  console.log(getDate(datetype))
+  // Update display data.
+  let dateRemainderSpan = document.getElementById(datetype + 'date-remained')
+  updateDateRemainderSpan(
+    dateRemainderSpan,
+    getDaysDelta(todayDate, new Date(currentDate))
+  )
 }
 
 export const onInputHandlers = {

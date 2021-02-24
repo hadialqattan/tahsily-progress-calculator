@@ -25,7 +25,17 @@ const updateReportSpan = (elm, totalPages, remainedPages) => {
     totalPages +
     ' pages, remained ' +
     remainedPages +
-    ' pages'
+    (remainedPages > 1 ? ' pages' : ' page')
 }
 
-export { updateProgressbar, updateInputValueSpan, updateReportSpan }
+/* update the given date remainder span */
+const updateDateRemainderSpan = (elm, daysDelta) => {
+  elm.innerHTML = daysDelta + (daysDelta > 1 ? ' days' : ' day') + ' remained'
+}
+
+export {
+  updateProgressbar,
+  updateInputValueSpan,
+  updateReportSpan,
+  updateDateRemainderSpan,
+}

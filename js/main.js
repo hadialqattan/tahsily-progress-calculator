@@ -3,9 +3,14 @@ This file contains the main website logic
 + DOM manipulation.
 */
 
-import { pages, totalPagesCount } from './constants.js'
+import { todayFormattedDate, pages, totalPagesCount } from './constants.js'
 import { updateProgressbar, updateReportSpan } from './dom.js'
-import { updateSubject, onInputHandlers, onChangeHandlers } from './handlers.js'
+import {
+  updateSubject,
+  updateDate,
+  onInputHandlers,
+  onChangeHandlers,
+} from './handlers.js'
 import {
   setCurrent,
   getPercentagesAvg,
@@ -28,7 +33,12 @@ window.onload = () => {
     }
 
     /* Update input date value */
-    document.getElementById(datetype + 'date-input').value = getDate(datetype)
+    let dateInput = document.getElementById(datetype + 'date-input')
+    dateInput.value = getDate(datetype)
+    dateInput.min = todayFormattedDate
+
+    /* Update date state and display data */
+    updateDate(datetype, getDate(datetype))
   }
 
   /* --- Pages state --- */

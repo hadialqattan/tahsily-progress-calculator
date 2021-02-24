@@ -17,6 +17,12 @@ input[type="range"] {
   text-align: left;
 }
 
+.badge {
+  padding: .3rem .45rem;
+  margin: .25rem 0rem;
+  font-size: 80%;
+}
+
 /* not bootstrap */
 .input-span {
   opacity: .5;

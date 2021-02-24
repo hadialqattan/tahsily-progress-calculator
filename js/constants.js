@@ -4,6 +4,18 @@ This file contains core constants.
 
 import { getPagesCount } from './math.js'
 
+// Date related constant.
+const todayDate = new Date()
+const dd = todayDate.getDate(),
+  mm = todayDate.getMonth() + 1,
+  yyyy = todayDate.getFullYear()
+const todayFormattedDate =
+  yyyy +
+  '-' +
+  (mm.toString().length < 2 ? '0' + mm : mm) +
+  '-' +
+  (dd.toString().length < 2 ? '0' + dd : dd)
+
 // subjectName: {first: (first page num),  last: (last page num)}
 const pages = {
   math: { first: 6, last: 87 },
@@ -24,4 +36,4 @@ const pagesCount = {
 const totalPagesCount = Object.values(pagesCount).reduce((a, b) => a + b)
 
 // All.
-export { pages, pagesCount, totalPagesCount }
+export { todayDate, todayFormattedDate, pages, pagesCount, totalPagesCount }
