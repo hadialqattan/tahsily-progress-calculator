@@ -18,7 +18,7 @@ input[type="range"] {
 }
 
 .badge {
-  padding: .3rem .45rem;
+  padding: .375rem .45rem;
   margin: .25rem 0rem;
   font-size: 80%;
 }
