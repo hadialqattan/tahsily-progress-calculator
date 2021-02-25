@@ -27,3 +27,12 @@ input[type="range"] {
 .input-span {
   opacity: .5;
 }
+
+@media only screen and (max-width: 550px) {
+  .open-source {
+    cursor: default;
+    pointer-events: none;        
+    text-decoration: none;
+    opacity: 0;
+  }
+}
