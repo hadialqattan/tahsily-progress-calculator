@@ -37,11 +37,19 @@ export const updateDate = (datetype, currentDate) => {
   setDate(datetype, currentDate)
 
   // Update display data.
-  let dateRemainderSpan = document.getElementById(datetype + 'date-remained')
+  updateDateDisplay(datetype, currentDate)
+}
+
+const updateDateDisplay = (datetype, currentDate) => {
   updateDateRemainderSpan(
-    dateRemainderSpan,
+    document.getElementById(datetype + 'date-remained'),
     getDaysDelta(todayDate, new Date(currentDate))
   )
+}
+
+const refreshAllDatesDisplay = () => {
+  updateDateDisplay('target', new Date(getDate('target')))
+  updateDateDisplay('test', new Date(getDate('test')))
 }
 
 export const onInputHandlers = {
@@ -76,15 +84,19 @@ const updateDateLocalStorage = (datetype) =>
 
 export const onChangeHandlers = {
   math: () => {
+    refreshAllDatesDisplay()
     updateSubjectLocalStorage('math')
   },
   phys: () => {
+    refreshAllDatesDisplay()
     updateSubjectLocalStorage('phys')
   },
   chem: () => {
+    refreshAllDatesDisplay()
     updateSubjectLocalStorage('chem')
   },
   biol: () => {
+    refreshAllDatesDisplay()
     updateSubjectLocalStorage('biol')
   },
   targetDate: () => {
