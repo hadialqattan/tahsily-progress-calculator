@@ -20,7 +20,7 @@ const todayFormattedDate =
 const pages = {
   math: { first: 6, last: 87 },
   phys: { first: 90, last: 155 },
-  chem: { first: 162, last: 231 },
+  chem: { first: 160, last: 231 },
   biol: { first: 234, last: 302 },
 }
 
