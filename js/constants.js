@@ -9,12 +9,12 @@ const todayDate = new Date()
 const dd = todayDate.getDate(),
   mm = todayDate.getMonth() + 1,
   yyyy = todayDate.getFullYear()
-const todayFormattedDate =
+const tomorrowFormattedDate =
   yyyy +
   '-' +
   (mm.toString().length < 2 ? '0' + mm : mm) +
   '-' +
-  (dd.toString().length < 2 ? '0' + dd : dd)
+  (dd.toString().length < 2 ? '0' + (dd + 1) : dd + 1)
 
 // subjectName: {first: (first page num),  last: (last page num)}
 const pages = {
@@ -36,4 +36,4 @@ const pagesCount = {
 const totalPagesCount = Object.values(pagesCount).reduce((a, b) => a + b)
 
 // All.
-export { todayDate, todayFormattedDate, pages, pagesCount, totalPagesCount }
+export { todayDate, tomorrowFormattedDate, pages, pagesCount, totalPagesCount }

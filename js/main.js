@@ -3,7 +3,7 @@ This file contains the main website logic
 + DOM manipulation.
 */
 
-import { todayFormattedDate, pages, totalPagesCount } from './constants.js'
+import { tomorrowFormattedDate, pages, totalPagesCount } from './constants.js'
 import { updateProgressbar, updateReportSpan } from './dom.js'
 import {
   updateSubject,
@@ -57,7 +57,7 @@ window.onload = () => {
     /* Update input date value */
     let dateInput = document.getElementById(datetype + 'date-input')
     dateInput.value = getDate(datetype)
-    dateInput.min = todayFormattedDate
+    dateInput.min = tomorrowFormattedDate
 
     /* Update date state and display data */
     updateDate(datetype, getDate(datetype))
