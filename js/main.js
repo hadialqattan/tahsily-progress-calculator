@@ -22,7 +22,7 @@ import {
 
 // Main Entry point
 window.onload = () => {
-  var cache
+  var cache, inputSlider
 
   /* --- Pages state --- */
   for (const subject in pages) {
@@ -32,8 +32,15 @@ window.onload = () => {
       setCurrent(subject, cache)
     }
 
+    /* Get input slider by DOM */
+    inputSlider = document.getElementById(subject + '-input')
+
+    /* Set input slider min/max properties */
+    inputSlider.min = pages[subject].first - 1
+    inputSlider.max = pages[subject].last
+
     /* Update input slider value */
-    document.getElementById(subject + '-input').value = getCurrent(subject)
+    inputSlider.value = getCurrent(subject)
 
     /* Update subject state and display data */
     updateSubject(subject, getCurrent(subject))
