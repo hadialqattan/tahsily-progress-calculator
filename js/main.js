@@ -78,8 +78,14 @@ window.onload = () => {
 const updateTotal = () => {
   let totalProgressbar = document.getElementById('total-progress')
   let totalReport = document.getElementById('total-report')
-  updateProgressbar(totalProgressbar, getPercentagesAvg())
+  let percentagesAvg = getPercentagesAvg()
+  updateProgressbar(totalProgressbar, percentagesAvg)
   updateReportSpan(totalReport, totalPagesCount, getTotalRemainder())
+
+  // Celebrate!
+  if (percentagesAvg == 100) {
+    party.screen()
+  }
 }
 
 /* Global input onInput handler */
