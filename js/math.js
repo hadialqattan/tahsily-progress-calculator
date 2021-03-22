@@ -18,5 +18,15 @@ const getDonePercentage = (subjectPagesCount, remainedPages) =>
 const getDaysDelta = (dateA, dateB) =>
   Math.floor((dateB.getTime() - dateA.getTime()) / (1000 * 60 * 60 * 24))
 
+/* Calculate pages per day */
+const getPagesPerDay = (totalRemaindedPages, daysDelta) =>
+  Math.ceil(totalRemaindedPages / (daysDelta > 0 ? daysDelta : 1))
+
 // All.
-export { getPagesCount, getRemainedPages, getDonePercentage, getDaysDelta }
+export {
+  getPagesCount,
+  getRemainedPages,
+  getDonePercentage,
+  getDaysDelta,
+  getPagesPerDay,
+}

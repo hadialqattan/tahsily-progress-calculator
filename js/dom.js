@@ -2,8 +2,8 @@
 This file contains core DOM manipulation functions.
 */
 
-import { totalPagesCount } from './constants.js'
 import { getTotalRemainder } from './state.js'
+import { getPagesPerDay } from './math.js'
 
 /* update the given progressbar percentage.
 
@@ -33,7 +33,7 @@ const updateReportSpan = (elm, totalPages, remainedPages) => {
 
 /* update the given date remainder span */
 const updateDateRemainderSpan = (elm, daysDelta) => {
-  let pagePerDay = Math.ceil(getTotalRemainder() / daysDelta)
+  let pagePerDay = getPagesPerDay(getTotalRemainder(), daysDelta)
   let shouldStudy =
     'study ' + pagePerDay + (pagePerDay > 1 ? ' pages' : ' page') + '/day'
   let remainderDays =
