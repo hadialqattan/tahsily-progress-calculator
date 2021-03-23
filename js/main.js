@@ -22,9 +22,14 @@ import {
 
 // Main Entry point
 window.onload = () => {
-  var cache, inputSlider
+  /* Workaround to disable DarkReader */
+  for (const style of document.head.getElementsByClassName('darkreader')) {
+    style.remove()
+  }
 
   /* --- Pages state --- */
+  var cache, inputSlider
+
   for (const subject in pages) {
     /* Load stored page nums if any */
     cache = localStorage.getItem(subject)
