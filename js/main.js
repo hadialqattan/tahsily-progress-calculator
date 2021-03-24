@@ -22,6 +22,13 @@ import {
 
 // Main Entry point
 window.onload = () => {
+  /* Scroll to top smoothly */
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  })
+
   /* Workaround to disable DarkReader */
   for (const style of document.head.getElementsByClassName('darkreader')) {
     style.remove()
