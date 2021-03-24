@@ -22,9 +22,6 @@ import {
 
 // Main Entry point
 window.onload = () => {
-  // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
-  window.scrollTo(0, 0)
-
   /* Workaround to disable DarkReader */
   for (const style of document.head.getElementsByClassName('darkreader')) {
     style.remove()
