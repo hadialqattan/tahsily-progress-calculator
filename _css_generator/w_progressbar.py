@@ -1,7 +1,7 @@
 """Generate w-xx css classes for the progress bars."""
 from pathlib import Path
 
-w: str = ".w-{num}(width:{num}%!important;)"
+w: str = ".w-{num}(width:{num}%!important;opacity:0.99;)"
 w_after: str = '.w-{num}::after(content:"{num}%";)'
 
 
