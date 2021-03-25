@@ -1,3 +1,10 @@
-css/bootstrap-4.0.0-dist/* linguist-vendored
-css/parallex-background-star.css linguist-vendored
 fonts/line-awesome-1.3.0/* linguist-vendored
+
+css/bootstrap/* linguist-vendored
+css/parallex-background-star.css linguist-vendored
+css/w-progressbar.min.css linguist-vendored
+
+js/bootstrap/* linguist-vendored
+js/howlerJS/* linguist-vendored
+js/jquery/* linguist-vendored
+js/partyJS/* linguist-vendored
