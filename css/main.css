@@ -58,6 +58,34 @@ body {
   }
 }
 
+/* Mute/Unmute button */
+input#unmute {
+  display: none;
+}
+#unmute-icon {
+  display: none;
+}
+#mute-icon {
+  display: none;
+}
+.sound-controller {
+  position: absolute;
+  right: 2rem;
+  top: 1.35rem;
+}
+
+.header-icon {
+  height: 2.5rem;
+  opacity: 0.25;
+}
+
+/* Settings button */
+.settings {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.35rem;
+}
+
 /* Input rages style */
 input[type='range'] {
   height: 20px;

@@ -106,3 +106,23 @@ export const onChangeHandlers = {
     updateDateLocalStorage('testdate')
   },
 }
+
+const unmute_icon = document.getElementById('unmute-icon')
+const mute_icon = document.getElementById('mute-icon')
+export const setMusicControllerIcon = (isPlaying) => {
+  if (isPlaying) {
+    unmute_icon.style.display = 'initial'
+    mute_icon.style.display = 'none'
+  } else {
+    unmute_icon.style.display = 'none'
+    mute_icon.style.display = 'initial'
+  }
+}
+
+export const onClickHandlers = {
+  unmute: (music) => {
+    music.playing() ? music.stop() : music.play()
+    localStorage.setItem('music', music.playing())
+    setMusicControllerIcon(music.playing())
+  },
+}
