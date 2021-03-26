@@ -22,3 +22,11 @@ input[type='range'] {
   margin: 0.25rem 0rem;
   font-size: 80%;
 }
+
+.modal-dialog {
+  z-index: 2;
+}
+
+.modal-backdrop {
+  z-index: -1;
+}

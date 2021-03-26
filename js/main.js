@@ -36,6 +36,11 @@ window.onload = () => {
     style.remove()
   }
 
+  /* Settings panel */
+  document
+    .getElementById('settings')
+    .addEventListener('click', () => handleClick('settings'))
+
   /* Background music */
   let isUnmuted = JSON.parse(localStorage.getItem('music'))
   if (isUnmuted == null) {
@@ -204,7 +209,7 @@ const handleChange = (elemID) => {
 const handleClick = (elemID, ifAny) => {
   switch (elemID) {
     case 'settings':
-      console.log('TODO: NOT IMPLEMENTED!')
+      onChangeHandlers.settings
       break
 
     case 'unmute':

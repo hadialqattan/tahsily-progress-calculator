@@ -22,7 +22,7 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <title>Tahsily Progress Calculator</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="./css/bootstrap-4.0.0-dist/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/bootstrap/bootstrap-4.0.0.min.css" rel="stylesheet">
 
   <!-- Line-awesome font (icons) -->
   <link href="./fonts/line-awesome-1.3.0/css/line-awesome.min.css" rel="stylesheet">
@@ -52,9 +52,34 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
 
   <div class="container main-container" style="text-decoration-style: solid;">
     <div class="header clearfix">
-
       <div class="settings">
-        <img class="header-icon" src="./assets/settings_icon.svg" alt="settings_icon.svg" title="Settings">
+
+        <!-- Button trigger modal -->
+        <img class="header-icon" id="settings" src="./assets/settings_icon.svg" alt="settings_icon.svg" title="Settings"
+          data-toggle="modal" data-target="#settingsModal">
+
+        <!-- Modal -->
+        <div class="modal fade" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="settingsLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Hello, World!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <h3 class="text-muted" style="float: none; text-align: center;">Tahsily Progress Calculator</h3>
@@ -210,6 +235,12 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
 
 <!-- Main logic script -->
 <script type="module" src="./js/main.js"></script>
+
+<!-- Jquery script -->
+<script src="./js/jquery/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap 4 script -->
+<script src="./js/bootstrap/bootstrap-4.0.0.bundle.min.js"></script>
 
 <!-- PartyJS script -->
 <script src="./js/partyJS/party.min.js"></script>

@@ -120,6 +120,9 @@ export const setMusicControllerIcon = (isPlaying) => {
 }
 
 export const onClickHandlers = {
+  settings: () => {
+    console.log("unimplemented")
+  },
   unmute: (music) => {
     const isPlaying = music.playing()
     isPlaying ? music.stop() : music.play()
