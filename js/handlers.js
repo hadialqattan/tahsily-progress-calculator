@@ -122,7 +122,7 @@ export const setMusicControllerIcon = (isPlaying) => {
 export const onClickHandlers = {
   unmute: (music) => {
     const isPlaying = music.playing()
-    isPlaying? music.stop(): music.play()
+    isPlaying ? music.stop() : music.play()
     localStorage.setItem('music', !isPlaying)
     setMusicControllerIcon(!isPlaying)
   },
