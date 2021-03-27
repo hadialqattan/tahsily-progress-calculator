@@ -5,6 +5,5 @@ css/parallex-background-star.css linguist-vendored
 css/w-progressbar.min.css linguist-vendored
 
 js/bootstrap/* linguist-vendored
-js/howlerJS/* linguist-vendored
 js/jquery/* linguist-vendored
 js/partyJS/* linguist-vendored
