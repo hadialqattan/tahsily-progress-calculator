@@ -81,10 +81,32 @@ input#unmute {
 }
 
 /* Settings button */
-.settings {
+.settings-button {
   position: absolute;
   left: 1.5rem;
   top: 1.35rem;
+}
+.settings.modal-content {
+  background: rgba(125, 125, 125, 0.125) !important;
+}
+.settings.modal-header {
+  border-bottom: 1px solid rgba(55, 54, 68, 0.9);
+}
+.settings.modal-footer {
+  border-top: 1px solid rgba(55, 54, 68, 0.9);
+}
+.settings.btn-primary {
+  color: rgb(245, 245, 245) !important;
+  background-color: rgba(3, 102, 209, 0.33) !important;
+  border: rgba(3, 102, 209, 0.9) solid 1px !important;
+}
+.settings.btn-secondary {
+  color: rgb(245, 245, 245) !important;
+  background-color: rgba(128, 128, 128, 0.33) !important;
+}
+.settings.close {
+  color: white;
+  text-shadow: 0 0;
 }
 
 /* Input rages style */

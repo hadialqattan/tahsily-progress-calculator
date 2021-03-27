@@ -52,22 +52,22 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <div id='stars3'></div>
 
   <!-- Settings modal -->
-  <div class="modal fade settings-modal" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
+  <div class="modal fade" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="settingsLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-content settings">
+        <div class="modal-header settings">
+          <h5 class="modal-title" id="settingsLabel">Settings</h5>
+          <button type="button" class="close settings" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body settings">
           Hello, World!
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+        <div class="modal-footer settings">
+          <button type="button" class="btn btn-secondary settings" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary settings">Save changes</button>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <div class="container main-container" style="text-decoration-style: solid;">
     <div class="header clearfix">
 
-      <div class="settings">
+      <div class="settings-button">
         <!-- Button trigger settings modal -->
         <img class="header-icon" id="settings" src="./assets/settings_icon.svg" alt="settings_icon.svg" title="Settings"
           data-toggle="modal" data-target="#settingsModal">
