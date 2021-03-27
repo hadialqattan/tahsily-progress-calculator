@@ -51,6 +51,13 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <div id='stars2'></div>
   <div id='stars3'></div>
 
+  <!-- Settings sticky div -->
+  <div class="settings-button">
+    <!-- Button to trigger settings' modal -->
+    <img class="header-icon" id="settings" src="./assets/settings_icon.svg" alt="settings_icon.svg" title="Settings"
+      data-toggle="modal" data-target="#settingsModal">
+  </div>
+
   <!-- Settings modal -->
   <div class="modal fade settings" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
     aria-hidden="true">
@@ -142,12 +149,13 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
             </div>
 
           </form>
-
         </div>
+
         <div class="modal-footer settings">
           <button type="button" class="btn btn-secondary settings" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary settings">Save changes</button>
+          <button id="save-settings" type="button" class="btn btn-primary settings">Save changes</button>
         </div>
+
       </div>
     </div>
   </div>
@@ -155,25 +163,7 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <!-- Main container -->
   <div class="container main-container" style="text-decoration-style: solid;">
     <div class="header clearfix">
-
-      <div class="settings-button">
-        <!-- Button trigger settings modal -->
-        <img class="header-icon" id="settings" src="./assets/settings_icon.svg" alt="settings_icon.svg" title="Settings"
-          data-toggle="modal" data-target="#settingsModal">
-      </div>
-
       <h3 class="text-muted" style="float: none; text-align: center;">Tahsily Progress Calculator</h3>
-
-      <div class="sound-controller">
-        <input type="checkbox" name="unmute" id="unmute">
-        <label for="unmute" id="unmute-icon">
-          <img class="header-icon" src="./assets/unmute_Icon.svg" alt="mute_Icon.svg" title="Unmute">
-        </label>
-        <label for="unmute" id="mute-icon">
-          <img class="header-icon" src="./assets/mute_Icon.svg" alt="speaker_Icon.svg" title="Mute">
-        </label>
-      </div>
-
     </div>
 
     <div class="jumbotron" style="padding-top: 14px; padding-bottom: 8px; margin-bottom: -14px;">
@@ -239,8 +229,6 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
 
         </div>
       </form>
-      <!--<p style="text-align: left; margin-bottom: 10px; opacity: 0.5; margin-top: 2px;" spellcheckker=" false">
-        &nbsp;NOTE: Your data won&apos;t be lost if you use the same device and browser.</p>-->
     </div>
 
     <div class="row marketing" style="padding-bottom: 0px; margin-bottom: 22px;">
