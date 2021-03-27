@@ -59,21 +59,7 @@ body {
   }
 }
 
-/* Mute/Unmute button */
-input#unmute {
-  display: none;
-}
-#unmute-icon {
-  display: none;
-}
-#mute-icon {
-  display: none;
-}
-.sound-controller {
-  position: absolute;
-  right: 2rem;
-  top: 1.35rem;
-}
+/* Settings sticky icon */
 .header-icon {
   height: 2.5rem;
   opacity: 0.25;
@@ -82,7 +68,7 @@ input#unmute {
   opacity: 0.5;
 }
 
-/* Settings button & modal */
+/* Settings sticky button & modal */
 .settings-button {
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
   background: inherit;

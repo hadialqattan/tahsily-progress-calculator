@@ -11,7 +11,6 @@ import {
   onInputHandlers,
   onChangeHandlers,
   onClickHandlers,
-  setMusicControllerIcon,
 } from './handlers.js'
 import {
   setCurrent,
@@ -40,25 +39,6 @@ window.onload = () => {
   document
     .getElementById('settings')
     .addEventListener('click', () => handleClick('settings'))
-
-  /* Background music */
-  let isUnmuted = JSON.parse(localStorage.getItem('music'))
-  if (isUnmuted == null) {
-    isUnmuted = true
-    localStorage.setItem('music', isUnmuted)
-  }
-  const music = new Howl({
-    src: [
-      '../assets/Stunning-New-Universe-Fly-Through-Really-Puts-Things-Into-Perspective_128-kbps.mp3',
-    ],
-    autoplay: isUnmuted,
-    loop: true,
-    volume: 0.5,
-  })
-  document
-    .getElementById('unmute')
-    .addEventListener('click', () => handleClick('unmute', music))
-  setMusicControllerIcon(isUnmuted)
 
   /* --- Pages state --- */
   var cache, inputSlider
@@ -206,14 +186,10 @@ const handleChange = (elemID) => {
 }
 
 /* Global input onClick handler */
-const handleClick = (elemID, ifAny) => {
+const handleClick = (elemID) => {
   switch (elemID) {
     case 'settings':
-      onChangeHandlers.settings
-      break
-
-    case 'unmute':
-      onClickHandlers.unmute(ifAny)
+      onChangeHandlers.settings()
       break
 
     default:

@@ -107,26 +107,8 @@ export const onChangeHandlers = {
   },
 }
 
-const unmute_icon = document.getElementById('unmute-icon')
-const mute_icon = document.getElementById('mute-icon')
-export const setMusicControllerIcon = (isPlaying) => {
-  if (isPlaying) {
-    unmute_icon.style.display = 'initial'
-    mute_icon.style.display = 'none'
-  } else {
-    unmute_icon.style.display = 'none'
-    mute_icon.style.display = 'initial'
-  }
-}
-
 export const onClickHandlers = {
   settings: () => {
-    console.log("unimplemented")
-  },
-  unmute: (music) => {
-    const isPlaying = music.playing()
-    isPlaying ? music.stop() : music.play()
-    localStorage.setItem('music', !isPlaying)
-    setMusicControllerIcon(!isPlaying)
+    console.log('Not implemented')
   },
 }
