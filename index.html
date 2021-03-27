@@ -43,6 +43,7 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <link href="./css/main.css" rel="stylesheet">
 </head>
 
+
 <body>
 
   <!-- Parallex background -->
@@ -50,36 +51,35 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <div id='stars2'></div>
   <div id='stars3'></div>
 
+  <!-- Settings modal -->
+  <div class="modal fade settings-modal" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="settingsLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Hello, World!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="container main-container" style="text-decoration-style: solid;">
     <div class="header clearfix">
-      <div class="settings">
 
-        <!-- Button trigger modal -->
+      <div class="settings">
+        <!-- Button trigger settings modal -->
         <img class="header-icon" id="settings" src="./assets/settings_icon.svg" alt="settings_icon.svg" title="Settings"
           data-toggle="modal" data-target="#settingsModal">
-
-        <!-- Modal -->
-        <div class="modal fade" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="settingsLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Hello, World!
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       <h3 class="text-muted" style="float: none; text-align: center;">Tahsily Progress Calculator</h3>
