@@ -52,7 +52,7 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <div id='stars3'></div>
 
   <!-- Settings modal -->
-  <div class="modal fade" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
+  <div class="modal fade settings" id="settingsModal" tabindex="1" role="dialog" aria-labelledby="settingsLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content settings">
@@ -63,7 +63,86 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
           </button>
         </div>
         <div class="modal-body settings">
-          Hello, World!
+          <form>
+
+            <div class="row">
+
+              <div class="col-lg-6" spellcheckker="false">
+                <div class="form-group">
+                  <label>Mathematics</label>
+                  <div class="row">
+                    <div class="col-lg-5 first-page" spellcheckker="false">
+                      <input id="math-first" type="number" class="form-control input-field" min="0" placeholder="first">
+                    </div>
+                    <div class="col-lg-1 to-span text-center" spellcheckker="false">
+                      <span class="input-span">to</span>
+                    </div>
+                    <div class="col-lg-5 last-page" spellcheckker="false">
+                      <input id="math-last" type="number" class="form-control input-field" min="0" placeholder="last">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6" spellcheckker="false">
+                <div class="form-group">
+                  <label>Physics</label>
+                  <div class="row">
+                    <div class="col-lg-5 first-page" spellcheckker="false">
+                      <input id="phys-first" type="number" class="form-control input-field" min="0" placeholder="first">
+                    </div>
+                    <div class="col-lg-1 to-span text-center" spellcheckker="false">
+                      <span class="input-span">to</span>
+                    </div>
+                    <div class="col-lg-5 last-page" spellcheckker="false">
+                      <input id="phys-last" type="number" class="form-control input-field" min="0" placeholder="last">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-lg-6" spellcheckker="false">
+                <div class="form-group">
+                  <label>Chemistry</label>
+                  <div class="row">
+                    <div class="col-lg-5 first-page" spellcheckker="false">
+                      <input id="chem-first" type="number" class="form-control input-field" min="0" placeholder="first">
+                    </div>
+                    <div class="col-lg-1 to-span text-center" spellcheckker="false">
+                      <span class="input-span">to</span>
+                    </div>
+                    <div class="col-lg-5 last-page" spellcheckker="false">
+                      <input id="chem-last" type="number" class="form-control input-field" min="0" placeholder="last">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6" spellcheckker="false">
+                <div class="form-group">
+                  <label>Biology</label>
+                  <div class="row">
+                    <div class="col-lg-5 first-page" spellcheckker="false">
+                      <input id="biol-first" type="number" class="form-control input-field" min="0" placeholder="first">
+                    </div>
+                    <div class="col-lg-1 to-span text-center" spellcheckker="false">
+                      <span class="input-span">to</span>
+                    </div>
+                    <div class="col-lg-5 last-page" spellcheckker="false">
+                      <input id="biol-last" type="number" class="form-control input-field" min="0" placeholder="last">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+
         </div>
         <div class="modal-footer settings">
           <button type="button" class="btn btn-secondary settings" data-dismiss="modal">Close</button>
