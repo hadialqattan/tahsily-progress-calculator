@@ -3,8 +3,12 @@ This file contains the main website logic
 + DOM manipulation.
 */
 
-import { tomorrowFormattedDate, pages, totalPagesCount } from './constants.js'
-import { updateProgressbar, updateReportSpan } from './dom.js'
+import { tomorrowFormattedDate } from './constants.js'
+import {
+  updateProgressbar,
+  updateReportSpan,
+  updateSettingsInput,
+} from './dom.js'
 import {
   updateSubject,
   updateDate,
@@ -19,6 +23,10 @@ import {
   getCurrent,
   setDate,
   getDate,
+  refreshCounters,
+  getTotalPagesCount,
+  setPageConstant,
+  pages,
 } from './state.js'
 
 // Main Entry point
@@ -35,14 +43,36 @@ window.onload = () => {
     style.remove()
   }
 
-  /* Settings panel */
+  /* Settings panel save button */
   document
-    .getElementById('settings')
+    .getElementById('save-settings')
     .addEventListener('click', () => handleClick('settings'))
 
-  /* --- Pages state --- */
+  /* --- Pages state (general) --- */
   var cache, inputSlider
 
+  /* --- First/Last pages state --- */
+  for (const subject in pages) {
+    /* Load stored first/last page nums if any */
+    for (const type in pages[subject]) {
+      cache = localStorage.getItem(subject + '-' + type)
+      if (cache) {
+        setPageConstant(subject, type, cache)
+        updateSettingsInput(subject, type, cache)
+      } else {
+        updateSettingsInput(subject, type, pages[subject][type])
+      }
+    }
+  }
+  refreshCounters()
+
+  /* Add event listeners */
+  const firstInputFields = document.getElementsByClassName('first-input-field')
+  for (const elm of firstInputFields) {
+    elm.addEventListener('change', () => handleChange(elm.id))
+  }
+
+  /* --- Currect pages state --- */
   for (const subject in pages) {
     /* Load stored page nums if any */
     cache = localStorage.getItem(subject)
@@ -98,7 +128,7 @@ const updateTotal = () => {
   let totalReport = document.getElementById('total-report')
   let percentagesAvg = getPercentagesAvg()
   updateProgressbar(totalProgressbar, percentagesAvg)
-  updateReportSpan(totalReport, totalPagesCount, getTotalRemainder())
+  updateReportSpan(totalReport, getTotalPagesCount(), getTotalRemainder())
 
   // Celebrate!
   if (percentagesAvg == 100) {
@@ -165,19 +195,40 @@ const handleChange = (elemID) => {
   switch (elemID) {
     case 'math-input':
       onChangeHandlers.math()
-      break
+      return
 
     case 'phys-input':
       onChangeHandlers.phys()
-      break
+      return
 
     case 'chem-input':
       onChangeHandlers.chem()
-      break
+      return
 
     case 'biol-input':
       onChangeHandlers.biol()
+      return
+
+    default:
       break
+  }
+
+  switch (elemID) {
+    case 'math-first':
+      onChangeHandlers.mathFirst()
+      return
+
+    case 'phys-first':
+      onChangeHandlers.physFirst()
+      return
+
+    case 'chem-first':
+      onChangeHandlers.chemFirst()
+      return
+
+    case 'biol-first':
+      onChangeHandlers.biolFirst()
+      return
 
     default:
       console.log('Invalid Input ID: ' + elemID)
@@ -189,8 +240,8 @@ const handleChange = (elemID) => {
 const handleClick = (elemID) => {
   switch (elemID) {
     case 'settings':
-      onChangeHandlers.settings()
-      break
+      onClickHandlers.settings()
+      return
 
     default:
       console.log('Invalid Input ID: ' + elemID)
