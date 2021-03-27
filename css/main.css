@@ -114,6 +114,12 @@ body {
   color: rgb(245, 245, 245) !important;
   background-color: rgba(128, 128, 128, 0.33) !important;
 }
+.settings.btn {
+  opacity: 0.8;
+}
+.settings.btn:hover {
+  opacity: 1;
+}
 .settings.close {
   color: white;
   text-shadow: 0 0;
