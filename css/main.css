@@ -74,10 +74,12 @@ input#unmute {
   right: 2rem;
   top: 1.35rem;
 }
-
 .header-icon {
   height: 2.5rem;
   opacity: 0.25;
+}
+.header-icon:hover {
+  opacity: 0.5;
 }
 
 /* Settings button & modal */
@@ -108,14 +110,16 @@ input#unmute {
   color: white;
   text-shadow: 0 0;
 }
-.first-page {
-  padding-right: 5px;
-}
-.last-page {
-  padding-left: 5px;
-}
 .to-span {
   padding: 0;
+}
+@media only screen and (min-width: 992px) {
+  .first-page {
+    padding-right: 5px;
+  }
+  .last-page {
+    padding-left: 5px;
+  }
 }
 
 /* Input rages style */
