@@ -1,9 +1,12 @@
-fonts/line-awesome-1.3.0/* linguist-vendored
+# FONTS/.css
+fonts/line-awesome-1.3.0/css/* linguist-vendored
 
+# CSS/.css
 css/bootstrap/* linguist-vendored
 css/parallex-background-star.css linguist-vendored
 css/w-progressbar.min.css linguist-vendored
 
+# JS/.js
 js/bootstrap/* linguist-vendored
 js/jquery/* linguist-vendored
 js/partyJS/* linguist-vendored
