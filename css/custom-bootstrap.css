@@ -22,3 +22,12 @@ input[type='range'] {
   margin: 0.25rem 0rem;
   font-size: 80%;
 }
+
+body.modal-open > :not(.modal) {
+  /* Blured background */
+  -webkit-filter: blur(1rem);
+  -moz-filter: blur(1rem);
+  -o-filter: blur(1rem);
+  -ms-filter: blur(1rem);
+  filter: blur(1rem);
+}

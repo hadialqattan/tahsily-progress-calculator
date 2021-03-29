@@ -3,7 +3,7 @@ This file contains onInput and onChange handlers.
 */
 
 import { getDaysDelta } from './math.js'
-import { todayDate, pagesCount } from './constants.js'
+import { todayDate } from './constants.js'
 import {
   updateProgressbar,
   updateInputValueSpan,
@@ -11,6 +11,9 @@ import {
   updateDateRemainderSpan,
 } from './dom.js'
 import {
+  pages,
+  pagesCount,
+  setPageConstant,
   setCurrent,
   getCurrent,
   getPercentage,
@@ -73,6 +76,10 @@ export const onInputHandlers = {
   },
 }
 
+const updateLastInputMinProp = (subj) =>
+  (document.getElementById(subj + '-last').min =
+    parseInt(document.getElementById(subj + '-first').value) + 1)
+
 const updateSubjectLocalStorage = (subj) =>
   localStorage.setItem(subj, getCurrent(subj))
 
@@ -99,10 +106,65 @@ export const onChangeHandlers = {
     refreshAllDatesDisplay()
     updateSubjectLocalStorage('biol')
   },
+  mathFirst: () => {
+    updateLastInputMinProp('math')
+  },
+  physFirst: () => {
+    updateLastInputMinProp('phys')
+  },
+  chemFirst: () => {
+    updateLastInputMinProp('chem')
+  },
+  biolFirst: () => {
+    updateLastInputMinProp('biol')
+  },
   targetDate: () => {
     updateDateLocalStorage('targetdate')
   },
   testDate: () => {
     updateDateLocalStorage('testdate')
+  },
+}
+
+const updatePageConstantLocalStorage = (subject, type, value) =>
+  localStorage.setItem(subject + '-' + type, value)
+
+export const onClickHandlers = {
+  settings: () => {
+    // Store new settings into the LocalStorage
+    // + update the input elem
+    // + update the page.{subject}.{type} constant
+    // + update current page in localStorage
+    let cache, inputElm
+    for (const subj in pages) {
+      for (const type in pages[subj]) {
+        inputElm = document.getElementById(subj + '-' + type)
+        cache = parseInt(inputElm.value)
+        if (!isNaN(cache) && cache != pages[subj][type]) {
+          cache = cache >= inputElm.min ? cache : inputElm.min
+          inputElm.value = cache
+          updatePageConstantLocalStorage(subj, type, cache)
+          setPageConstant(subj, type, cache)
+        }
+      }
+    }
+    // Update the subject's current page only if it's current value
+    // less than the first page or greater than the last page.
+    for (const subj in pages) {
+      cache = document.getElementById(subj + '-input').value
+      if (cache < pages[subj].first || cache > pages[subj].last) {
+        if (cache < pages[subj].first) {
+          cache = pages[subj].first - 1
+        } else {
+          cache = pages[subj].last
+        }
+        updateSubject(subj, cache)
+        updateSubjectLocalStorage(subj)
+      }
+    }
+    // Refresh everything!
+    window.onload()
+    // Close/hide settings modal.
+    document.getElementById('close-settings').click()
   },
 }

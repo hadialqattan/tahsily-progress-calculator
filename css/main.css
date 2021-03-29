@@ -40,8 +40,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  box-shadow: inset 0 0 2000px rgba(190, 190, 190, 0.1);
-  filter: blur(10px);
+  box-shadow: inset 0 0 2000px rgba(150, 150, 150, 0.1);
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
   margin: -20px;
 }
 
@@ -55,6 +56,83 @@ body {
     pointer-events: none;
     text-decoration: none;
     opacity: 0;
+  }
+}
+
+/* Settings sticky icon */
+.header-icon {
+  height: 2.5rem;
+  opacity: 0.25;
+}
+.header-icon:hover {
+  opacity: 0.5;
+}
+
+/* Settings sticky button & modal */
+.settings-button {
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+  background: inherit;
+  overflow: hidden;
+
+  position: fixed;
+  right: 0;
+  top: 6rem;
+  z-index: 2;
+
+  padding: 0.7rem 0.75rem;
+  border-radius: 10px 0 0 10px;
+}
+.settings-button:before {
+  content: '';
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(184, 183, 183, 0.1);
+  -webkit-backdrop-filter: blur(0.125rem);
+  backdrop-filter: blur(0.125rem);
+  margin: -20px;
+}
+.settings.modal-content {
+  background: rgba(150, 150, 150, 0.125) !important;
+}
+.settings.modal-header {
+  border-bottom: 1px solid rgba(55, 54, 68, 0.9);
+}
+.settings.modal-footer {
+  border-top: 1px solid rgba(55, 54, 68, 0.9);
+}
+.settings.btn-primary {
+  color: rgb(245, 245, 245) !important;
+  background-color: rgba(3, 102, 209, 0.33) !important;
+  border: rgba(3, 102, 209, 0.9) solid 1px !important;
+}
+.settings.btn-secondary {
+  color: rgb(245, 245, 245) !important;
+  background-color: rgba(128, 128, 128, 0.33) !important;
+}
+.settings.btn {
+  opacity: 0.8;
+}
+.settings.btn:hover {
+  opacity: 1;
+}
+.settings.close {
+  color: white;
+  text-shadow: 0 0;
+}
+.to-span {
+  padding: 0;
+}
+@media only screen and (min-width: 992px) {
+  .first-page {
+    padding-right: 5px;
+  }
+  .last-page {
+    padding-left: 5px;
   }
 }
 

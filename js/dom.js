@@ -41,9 +41,15 @@ const updateDateRemainderSpan = (elm, daysDelta) => {
   elm.innerHTML = shouldStudy + ', ' + remainderDays
 }
 
+/* update settings' last/first page input fields */
+const updateSettingsInput = (subject, type, value) => {
+  document.getElementById(subject + '-' + type).value = value
+}
+
 export {
   updateProgressbar,
   updateInputValueSpan,
   updateReportSpan,
   updateDateRemainderSpan,
+  updateSettingsInput,
 }
