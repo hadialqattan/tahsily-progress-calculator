@@ -14,5 +14,8 @@ const tomorrowFormattedDate =
   '-' +
   (dd.toString().length < 2 ? '0' + (dd + 1) : dd + 1)
 
+// User agreement versions.
+const userAgreement = { v1_0: 'user-agreement-v1.0', agreed: 'agreed' }
+
 // All.
-export { todayDate, tomorrowFormattedDate }
+export { todayDate, tomorrowFormattedDate, userAgreement }
