@@ -3,7 +3,7 @@ This file contains the main website logic
 + DOM manipulation.
 */
 
-import { tomorrowFormattedDate } from './constants.js'
+import { tomorrowFormattedDate, userAgreement } from './constants.js'
 import {
   updateProgressbar,
   updateReportSpan,
@@ -42,6 +42,15 @@ window.onload = () => {
   for (const style of document.head.getElementsByClassName('darkreader')) {
     style.remove()
   }
+
+  /* Force user-agreement */
+  if (localStorage.getItem(userAgreement.v1_0) != userAgreement.agreed) {
+    $('#userAgreementModal').modal('show') // JQuery: line 1 of 2
+  }
+  document.getElementById('agree-btn').addEventListener('click', () => {
+    localStorage.setItem(userAgreement.v1_0, userAgreement.agreed)
+    $('#userAgreementModal').modal('hide') // JQuery: line 2 of 2
+  })
 
   /* Settings panel save button */
   document

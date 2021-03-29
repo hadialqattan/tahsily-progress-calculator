@@ -56,6 +56,37 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
   <div id='stars2'></div>
   <div id='stars3'></div>
 
+  <!-- user agreement modal -->
+  <div class="modal fade settings" id="userAgreementModal" tabindex="1" role="dialog"
+    aria-labelledby="userAgreementLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content settings">
+        <div class="modal-header settings">
+          <h5 class="modal-title" id="userAgreementLabel">User Agreement</h5>
+        </div>
+        <div class="modal-body settings">
+          <div class="row">
+            <div class="col-lg-12" spellcheckker="false">
+              By clicking "<b>I Agree</b>" button you are
+              agreeing & acceping our <a
+                href="https://github.com/hadialqattan/tahsily-progress-calculator/wiki/Terms-of-use" target="_blank"
+                rel="noopener noreferrer">terms of use</a>,
+              <a href="https://github.com/hadialqattan/tahsily-progress-calculator/wiki/Privacy-policy" target="_blank"
+                rel="noopener noreferrer">privacy policy</a>, and
+              <a href="https://github.com/hadialqattan/tahsily-progress-calculator/wiki/Copyright" target="_blank"
+                rel="noopener noreferrer">copyright statement</a>.
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer settings">
+          <button id="agree-btn" type="button" class="btn btn-primary agree">I Agree</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- Settings sticky div -->
   <div class="settings-button">
     <!-- Button to trigger settings' modal -->
@@ -161,7 +192,6 @@ Copyright (c) 2021 Hadi Alqattan <alqattanhadizaki@gmail.com>
         </div>
 
         <div class="modal-footer settings">
-          <button type="button" class="btn btn-secondary settings" data-dismiss="modal">Close</button>
           <button id="save-settings" type="button" class="btn btn-primary settings">Save changes</button>
         </div>
 
