@@ -1,0 +1,37 @@
+{
+  "name": "tahsily-progress-calculator",
+  "version": "0.0.7",
+  "description": "Tahsily's book progress tracker and calculator.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadialqattan/tahsily-progress-calculator.git"
+  },
+  "author": "Hadi Alqattan",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/hadialqattan/tahsily-progress-calculator/issues"
+  },
+  "homepage": "https://github.com/hadialqattan/tahsily-progress-calculator#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-manifest-plugin": "^3.1.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "party-js": "^1.0.4"
+  }
+}
