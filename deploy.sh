@@ -8,4 +8,5 @@ if [[ -z "$1" ]]; then
 fi
 
 # $1 (e.g. dist)
+#git subtree push --prefix $1 origin gh-pages
 git push origin `git subtree split --prefix $1 main`:gh-pages --force

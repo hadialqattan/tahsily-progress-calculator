@@ -1,16 +1,15 @@
-html {
-  background: radial-gradient(
-    ellipse at bottom,
-    #09223a 0%,
-    #090a0f 100%
-  ) !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  margin: 0 !important;
-}
-
 /* Don't use the memory when it doesn't worth it! */
 @media only screen and (min-width: 576px) {
+  html {
+    background: radial-gradient(
+      ellipse at bottom,
+      #09223a 0%,
+      #090a0f 100%
+    ) !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    margin: 0 !important;
+  }
   #stars {
     width: 1px;
     height: 1px;
