@@ -1,0 +1,52 @@
+.lar,
+.lab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+readers do not read off random characters that represent icons */
+.la-github:before {
+  content: '\f09b';
+}
+
+.la-heart:before {
+  content: '\f004';
+}
+
+@font-face {
+  font-family: 'Line Awesome Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url('../fonts/la-regular-400.eot');
+  src: url('../fonts/la-regular-400.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/la-regular-400.woff2') format('woff2'),
+    url('../fonts/la-regular-400.woff') format('woff'),
+    url('../fonts/la-regular-400.ttf') format('truetype'),
+    url('../fonts/la-regular-400.svg#lineawesome') format('svg');
+}
+.lar {
+  font-family: 'Line Awesome Free';
+}
+
+@font-face {
+  font-family: 'Line Awesome Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url('../fonts/la-brands-400.eot');
+  src: url('../fonts/la-brands-400.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/la-brands-400.woff2') format('woff2'),
+    url('../fonts/la-brands-400.woff') format('woff'),
+    url('../fonts/la-brands-400.ttf') format('truetype'),
+    url('../fonts/la-brands-400.svg#lineawesome') format('svg');
+}
+.lab {
+  font-family: 'Line Awesome Brands';
+}

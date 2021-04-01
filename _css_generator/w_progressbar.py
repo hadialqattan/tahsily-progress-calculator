@@ -16,5 +16,6 @@ def generate_class(num: int, has_after: bool):
         return fill_template(num, w)
 
 
-with open(Path("css").joinpath("w-progressbar.min.css"), "w+") as f:
+FILEPATH = Path("src").joinpath("css").joinpath("w-progressbar.min.css")
+with open(FILEPATH, "w+") as f:
     f.write("".join([generate_class(i, i > 0) for i in range(101)]))
