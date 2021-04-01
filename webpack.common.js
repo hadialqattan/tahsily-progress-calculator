@@ -1,14 +1,22 @@
 const path = require('path')
 const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
 
 module.exports = {
   optimization: {
     usedExports: true,
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
+    minimize: true,
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
     splitChunks: {
+      minSize: 100000,
+      maxSize: 250000,
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
@@ -36,7 +44,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -49,11 +57,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new RemoveEmptyScriptsPlugin(),
+    new WebpackManifestPlugin({ removeKeyHash: true }),
+    new MiniCssExtractPlugin({ filename: '[name].[chunkhash:8].min.css' }),
     new HtmlWebPackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
       filename: 'index.html',
     }),
-    new WebpackManifestPlugin({ removeKeyHash: true }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',

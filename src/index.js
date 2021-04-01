@@ -1,10 +1,10 @@
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './fonts/line-awesome-1.3.0/css/line-awesome.css'
-import './css/w-progressbar.min.css'
+import('./css/w-progressbar.min.css')
 import './css/narrow-jumbotron.css'
 import './css/custom-bootstrap.css'
-import './css/parallex-background-star.css'
+import('./css/parallex-background-star.css')
 import './css/main.css'
 
 // JS
