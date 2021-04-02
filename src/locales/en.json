@@ -1,0 +1,32 @@
+{
+  "title": "Tahsily Progress Calculator",
+  "labels": {
+    "tota": "Total",
+    "math": "Mathematics",
+    "phys": "Physics",
+    "chem": "Chemistry",
+    "biol": "Biology"
+  },
+  "report": {
+    "date": "study {{pages}} pages/day, {{days}} day remained",
+    "lastPage": "last page: {{pageNum}}",
+    "subReport": "{{done}} out of {{total}} pages, remained {{remained}} pages"
+  },
+  "user-agreement": {},
+  "settings": {
+    "title": "Settings",
+    "to": "to",
+    "btn": "Save changes"
+  },
+  "main": {
+    "header": "$(title)",
+    "date": {
+      "finish": "I want to finish by",
+      "test": "My test on"
+    }
+  },
+  "footer": {
+    "openSource": "open source",
+    "copyright": "© 2021 made with <i class=\"lar la-heart\"></i> by<a href=\"https://www.linkedin.com/in/hadialqattan/\" style=\"color: #007bff;\"> Hadi Alqattan</a>"
+  }
+}

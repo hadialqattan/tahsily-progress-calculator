@@ -5,10 +5,12 @@ import('./css/w-progressbar.min.css')
 import './css/narrow-jumbotron.css'
 import './css/custom-bootstrap.css'
 import('./css/parallex-background-star.css')
+import './css/rtl.css'
 import './css/main.css'
 
 // JS
 import _ from './js/main'
+import './locales/i18n.js'
 import('bootstrap/js/dist/modal')
 import('party-js')
 
