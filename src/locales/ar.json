@@ -1,0 +1,40 @@
+{
+  "title": "حاسبة التقدم للتحصيلي",
+  "author": "هادي القطان",
+  "labels": {
+    "tota": "المجموع الكلي",
+    "math": "الرياضيات",
+    "phys": "الفيزياء",
+    "chem": "الكيمياء",
+    "biol": "الأحياء"
+  },
+  "words": {
+    "page": "صفحة",
+    "pages": "صفحات",
+    "day": "يوم",
+    "days": "أيام"
+  },
+  "report": {
+    "date": "ذاكر {{pages}} {{pagesWord}}\\يوم، تبقى {{days}} {{daysWord}}",
+    "lastPage": "آخر صفحة: {{pageNum}}",
+    "subReport": "{{done}} من أصل {{total}} صفحات، تبقى {{remained}} {{pagesWord}}"
+  },
+  "user-agreement": {},
+  "settings": {
+    "title": "الإعدادات",
+    "to": "إلى",
+    "btn": "حفظ التغييرات",
+    "language": "English"
+  },
+  "main": {
+    "header": "$(title)",
+    "date": {
+      "finish": "أريد أن أنتهي في",
+      "test": "اختباري يوافق"
+    }
+  },
+  "footer": {
+    "openSource": "مفتوح المصدر",
+    "copyright": "© 2021 صنع بـ <i class=\"lar la-heart\"></i> بواسطة <a href=\"https://www.linkedin.com/in/hadialqattan/\" style=\"color: #007bff;\">هادي القطان</a>"
+  }
+}

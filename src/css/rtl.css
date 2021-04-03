@@ -1,0 +1,26 @@
+/* RTL support */
+[dir='rtl'] {
+  text-align: right !important;
+}
+
+.copy-right {
+  float: left !important;
+}
+
+.copy-right[dir='rtl'] {
+  float: right !important;
+  margin-right: 0.12rem !important;
+}
+
+.open-source {
+  float: right !important;
+}
+
+.open-source[dir='rtl'] {
+  float: left !important;
+  margin-left: 0.12rem !important;
+}
+
+.modal-header .close[dir='rtl'] {
+  margin: -1rem 75% -1rem auto;
+}
