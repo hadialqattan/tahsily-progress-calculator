@@ -2,6 +2,7 @@
 This file contains onInput and onChange handlers.
 */
 
+import i18n from '../locales/i18n.js'
 import { getDaysDelta } from './math.js'
 import { todayDate } from './constants.js'
 import {
@@ -166,5 +167,13 @@ export const onClickHandlers = {
     window.onload()
     // Close/hide settings modal.
     document.getElementById('close-settings').click()
+  },
+  language: () => {
+    if (i18n.language == 'ar') {
+      i18n.changeLanguage('en-US')
+    } else {
+      i18n.changeLanguage('ar')
+    }
+    location.reload()
   },
 }

@@ -22,7 +22,8 @@
   "settings": {
     "title": "Settings",
     "to": "to",
-    "btn": "Save changes"
+    "btn": "Save changes",
+    "language": "عربي"
   },
   "main": {
     "header": "$(title)",

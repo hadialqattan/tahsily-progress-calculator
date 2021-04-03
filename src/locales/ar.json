@@ -23,7 +23,8 @@
   "settings": {
     "title": "الإعدادات",
     "to": "إلى",
-    "btn": "حفظ التغييرات"
+    "btn": "حفظ التغييرات",
+    "language": "English"
   },
   "main": {
     "header": "$(title)",

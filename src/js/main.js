@@ -32,11 +32,13 @@ import {
 // Main Entry point
 window.onload = () => {
   /* Scroll to top smoothly */
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: 'smooth',
-  })
+  setTimeout(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }, 25)
 
   /* Workaround to disable DarkReader */
   for (const style of document.head.getElementsByClassName('darkreader')) {
@@ -52,10 +54,15 @@ window.onload = () => {
     $('#userAgreementModal').modal('hide') // JQuery: line 2 of 2
   })
 
-  /* Settings panel save button */
+  /* Settings panel */
+  // save button
   document
     .getElementById('save-settings')
     .addEventListener('click', () => handleClick('settings'))
+  // change language button
+  document
+    .getElementById('change-language')
+    .addEventListener('click', () => handleClick('language'))
 
   /* --- Pages state (general) --- */
   var cache, inputSlider
@@ -250,6 +257,10 @@ const handleClick = (elemID) => {
   switch (elemID) {
     case 'settings':
       onClickHandlers.settings()
+      return
+
+    case 'language':
+      onClickHandlers.language()
       return
 
     default:
