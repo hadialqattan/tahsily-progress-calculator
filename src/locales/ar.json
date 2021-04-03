@@ -19,7 +19,6 @@
     "lastPage": "آخر صفحة: {{pageNum}}",
     "subReport": "{{done}} من أصل {{total}} صفحات، تبقى {{remained}} {{pagesWord}}"
   },
-  "user-agreement": {},
   "settings": {
     "title": "الإعدادات",
     "to": "إلى",
@@ -35,6 +34,11 @@
   },
   "footer": {
     "openSource": "مفتوح المصدر",
-    "copyright": "© 2021 صنع بـ <i class=\"lar la-heart\"></i> بواسطة <a href=\"https://www.linkedin.com/in/hadialqattan/\" target=\"_blank\" rel=\"noopener noreferrer\">هادي القطان</a>"
+    "copyright": "© 2021 صنع بـ <i class=\"lar la-heart\"></i> بواسطة <a href=\"https://www.linkedin.com/in/hadialqattan/\" target=\"_blank\" rel=\"noopener noreferrer\">هادي القطان</a>",
+    "moreInfo": {
+      "terms": "الشروط",
+      "privacy": "الخصوصية",
+      "copyright": "الحقوق"
+    }
   }
 }
