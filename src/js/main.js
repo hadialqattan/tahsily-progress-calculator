@@ -40,11 +40,6 @@ window.onload = () => {
     })
   }, 100)
 
-  /* Workaround to disable DarkReader */
-  for (const style of document.head.getElementsByClassName('darkreader')) {
-    style.remove()
-  }
-
   /* Settings panel */
   // save button
   document

@@ -3,6 +3,7 @@
   "version": "0.0.7",
   "description": "Tahsily's book progress tracker and calculator.",
   "main": "index.js",
+  "private": "true",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
@@ -42,6 +43,7 @@
     "i18next": "^20.1.0",
     "i18next-browser-languagedetector": "^6.1.0",
     "jquery": "^3.6.0",
+    "no-darkreader": "^0.0.4",
     "party-js": "^1.0.4"
   },
   "lint-staged": {
