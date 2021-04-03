@@ -254,6 +254,19 @@ a {
   text-align: center;
 }
 @media only screen and (max-width: 575px) {
+  .footer {
+    text-align: center;
+  }
+  .copy-right,
+  .more-info {
+    display: block;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .more-info {
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
   .header {
     border-bottom-color: rgba(55, 54, 68, 0) !important;
   }
