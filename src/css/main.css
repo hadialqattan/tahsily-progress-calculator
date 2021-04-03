@@ -19,6 +19,10 @@ body {
   background: transparent !important;
 }
 
+.main-container {
+  text-decoration-style: solid;
+}
+
 @media only screen and (min-width: 576px) {
   .main-container {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
@@ -59,17 +63,6 @@ body {
     text-decoration: none;
     opacity: 0;
   }
-}
-
-/* User agreement modal */
-.agree.btn-primary {
-  color: rgb(245, 245, 245) !important;
-  background-color: rgba(3, 102, 209, 0.33) !important;
-  border: rgba(3, 102, 209, 0.9) solid 1px !important;
-  width: 100%;
-}
-.agree.btn:hover {
-  background-color: rgba(3, 102, 209, 0.5) !important;
 }
 
 /* Settings sticky icon */
@@ -256,7 +249,24 @@ a {
 .header {
   border-bottom-color: rgba(55, 54, 68, 0.9) !important;
 }
+.header h3 {
+  float: none;
+  text-align: center;
+}
 @media only screen and (max-width: 575px) {
+  .footer {
+    text-align: center;
+  }
+  .copy-right,
+  .more-info {
+    display: block;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .more-info {
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
   .header {
     border-bottom-color: rgba(55, 54, 68, 0) !important;
   }
@@ -274,13 +284,23 @@ a {
 }
 .progress {
   background-color: rgba(131, 131, 156, 0.1) !important;
+  float: none;
+  opacity: 1;
 }
 .footer {
   color: rgba(180, 180, 180, 0.9) !important;
   border-top-color: rgba(55, 54, 68, 0.9) !important;
+  padding-top: 11.25px;
+  margin-bottom: 0.5rem;
+}
+.footer a {
+  color: #007bff;
 }
 .jumbotron {
   background-color: rgba(100, 100, 100, 0.1) !important;
+  padding-top: 14px;
+  padding-bottom: 8px;
+  margin-bottom: -14px;
 }
 @media screen and (min-width: 48em) {
   .jumbotron {

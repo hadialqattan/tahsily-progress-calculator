@@ -38,21 +38,12 @@ window.onload = () => {
       left: 0,
       behavior: 'smooth',
     })
-  }, 25)
+  }, 100)
 
   /* Workaround to disable DarkReader */
   for (const style of document.head.getElementsByClassName('darkreader')) {
     style.remove()
   }
-
-  /* Force user-agreement */
-  if (localStorage.getItem(userAgreement.v1_0) != userAgreement.agreed) {
-    $('#userAgreementModal').modal('show') // JQuery: line 1 of 2
-  }
-  document.getElementById('agree-btn').addEventListener('click', () => {
-    localStorage.setItem(userAgreement.v1_0, userAgreement.agreed)
-    $('#userAgreementModal').modal('hide') // JQuery: line 2 of 2
-  })
 
   /* Settings panel */
   // save button

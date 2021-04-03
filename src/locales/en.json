@@ -18,7 +18,6 @@
     "lastPage": "last page: {{pageNum}}",
     "subReport": "{{done}} out of {{total}} pages, remained {{remained}} {{pagesWord}}"
   },
-  "user-agreement": {},
   "settings": {
     "title": "Settings",
     "to": "to",
@@ -34,6 +33,11 @@
   },
   "footer": {
     "openSource": "open source",
-    "copyright": "© 2021 made with <i class=\"lar la-heart\"></i> by<a href=\"https://www.linkedin.com/in/hadialqattan/\" style=\"color: #007bff;\"> Hadi Alqattan</a>"
+    "copyright": "© 2021 made with <i class=\"lar la-heart\"></i> by <a href=\"https://www.linkedin.com/in/hadialqattan/\" target=\"_blank\" rel=\"noopener noreferrer\">Hadi Alqattan</a>",
+    "moreInfo": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "copyright": "Copyright"
+    }
   }
 }

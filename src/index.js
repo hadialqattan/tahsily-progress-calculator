@@ -15,5 +15,4 @@ import('bootstrap/js/dist/modal')
 import('party-js')
 
 // SVG
-import './fonts/line-awesome-1.3.0/svg/github.svg'
 import './fonts/line-awesome-1.3.0/svg/heart.svg'
