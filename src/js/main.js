@@ -38,7 +38,7 @@ window.onload = () => {
       left: 0,
       behavior: 'smooth',
     })
-  }, 25)
+  }, 100)
 
   /* Workaround to disable DarkReader */
   for (const style of document.head.getElementsByClassName('darkreader')) {

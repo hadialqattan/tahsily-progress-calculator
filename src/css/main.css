@@ -19,6 +19,10 @@ body {
   background: transparent !important;
 }
 
+.main-container {
+  text-decoration-style: solid;
+}
+
 @media only screen and (min-width: 576px) {
   .main-container {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
@@ -256,6 +260,10 @@ a {
 .header {
   border-bottom-color: rgba(55, 54, 68, 0.9) !important;
 }
+.header h3 {
+  float: none;
+  text-align: center;
+}
 @media only screen and (max-width: 575px) {
   .header {
     border-bottom-color: rgba(55, 54, 68, 0) !important;
@@ -274,13 +282,23 @@ a {
 }
 .progress {
   background-color: rgba(131, 131, 156, 0.1) !important;
+  float: none;
+  opacity: 1;
 }
 .footer {
   color: rgba(180, 180, 180, 0.9) !important;
   border-top-color: rgba(55, 54, 68, 0.9) !important;
+  padding-top: 11.25px;
+  margin-bottom: 0.5rem;
+}
+.footer a {
+  color: #007bff;
 }
 .jumbotron {
   background-color: rgba(100, 100, 100, 0.1) !important;
+  padding-top: 14px;
+  padding-bottom: 8px;
+  margin-bottom: -14px;
 }
 @media screen and (min-width: 48em) {
   .jumbotron {
