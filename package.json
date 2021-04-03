@@ -6,8 +6,9 @@
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "npx prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,6 @@
     "party-js": "^1.0.4"
   },
   "lint-staged": {
-    "*.{js,css,md,html}": "prettier --write"
+    "*.{js,css,md,html,json,yml,yaml}": "prettier --write"
   }
 }
