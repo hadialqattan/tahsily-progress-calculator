@@ -1,8 +1,8 @@
 # This workflow will do a clean install of node dev dependencies, and lint the source code using prettier.
 
-name: CI
+name: Lint
 
-on: push
+on: [push, pull]
 
 jobs:
   lint:
