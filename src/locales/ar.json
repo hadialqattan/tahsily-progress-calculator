@@ -8,10 +8,16 @@
     "chem": "الكيمياء",
     "biol": "الأحياء"
   },
+  "words": {
+    "page": "صفحة",
+    "pages": "صفحات",
+    "day": "يوم",
+    "days": "أيام"
+  },
   "report": {
-    "date": "ذاكر {{pages}} صفحة\\يوم، تبقى {{days}} أيام",
+    "date": "ذاكر {{pages}} {{pagesWord}}\\يوم، تبقى {{days}} {{daysWord}}",
     "lastPage": "آخر صفحة: {{pageNum}}",
-    "subReport": "{{done}} من أصل {{total}} صفحة، تبقى {{remained}} صفحة"
+    "subReport": "{{done}} من أصل {{total}} صفحات، تبقى {{remained}} {{pagesWord}}"
   },
   "user-agreement": {},
   "settings": {

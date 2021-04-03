@@ -7,10 +7,16 @@
     "chem": "Chemistry",
     "biol": "Biology"
   },
+  "words": {
+    "page": "page",
+    "pages": "pages",
+    "day": "day",
+    "days": "days"
+  },
   "report": {
-    "date": "study {{pages}} pages/day, {{days}} day remained",
+    "date": "study {{pages}} {{pagesWord}}/day, {{days}} {{daysWord}} remained",
     "lastPage": "last page: {{pageNum}}",
-    "subReport": "{{done}} out of {{total}} pages, remained {{remained}} pages"
+    "subReport": "{{done}} out of {{total}} pages, remained {{remained}} {{pagesWord}}"
   },
   "user-agreement": {},
   "settings": {
