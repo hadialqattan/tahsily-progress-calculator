@@ -77,9 +77,19 @@ export const onInputHandlers = {
   },
 }
 
-const updateLastInputMinProp = (subj) =>
-  (document.getElementById(subj + '-last').min =
-    parseInt(document.getElementById(subj + '-first').value) + 1)
+const updateLastInputMinProp = (subj) => {
+  document.getElementById(subj + '-last').min =
+    parseInt(document.getElementById(subj + '-first').value) + 1
+  validateLastInput(subj)
+}
+
+const validateLastInput = (subj) => {
+  const minVal = parseInt(document.getElementById(subj + '-first').value) + 1
+  const lastPage = document.getElementById(subj + '-last')
+  if (parseInt(lastPage.value) < minVal) {
+    lastPage.value = minVal
+  }
+}
 
 const updateSubjectLocalStorage = (subj) =>
   localStorage.setItem(subj, getCurrent(subj))
@@ -119,6 +129,18 @@ export const onChangeHandlers = {
   biolFirst: () => {
     updateLastInputMinProp('biol')
   },
+  mathLast: () => {
+    validateLastInput('math')
+  },
+  physLast: () => {
+    validateLastInput('phys')
+  },
+  chemLast: () => {
+    validateLastInput('chem')
+  },
+  biolLast: () => {
+    validateLastInput('biol')
+  },
   targetDate: () => {
     updateDateLocalStorage('targetdate')
   },
@@ -152,7 +174,7 @@ export const onClickHandlers = {
     // Update the subject's current page only if it's current value
     // less than the first page or greater than the last page.
     for (const subj in pages) {
-      cache = document.getElementById(subj + '-input').value
+      cache = parseInt(document.getElementById(subj + '-input').value)
       if (cache < pages[subj].first || cache > pages[subj].last) {
         if (cache < pages[subj].first) {
           cache = pages[subj].first - 1

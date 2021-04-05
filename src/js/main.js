@@ -72,6 +72,11 @@ window.onload = () => {
   const firstInputFields = document.getElementsByClassName('first-input-field')
   for (const elm of firstInputFields) {
     elm.addEventListener('change', () => handleChange(elm.id))
+    handleChange(elm.id)
+  }
+  const lastInputFields = document.getElementsByClassName('last-input-field')
+  for (const elm of lastInputFields) {
+    elm.addEventListener('change', () => handleChange(elm.id))
   }
 
   /* --- Currect pages state --- */
@@ -230,6 +235,27 @@ const handleChange = (elemID) => {
 
     case 'biol-first':
       onChangeHandlers.biolFirst()
+      return
+
+    default:
+      break
+  }
+
+  switch (elemID) {
+    case 'math-last':
+      onChangeHandlers.mathLast()
+      return
+
+    case 'phys-last':
+      onChangeHandlers.physLast()
+      return
+
+    case 'chem-last':
+      onChangeHandlers.chemLast()
+      return
+
+    case 'biol-last':
+      onChangeHandlers.biolLast()
       return
 
     default:
