@@ -35,7 +35,7 @@ After doing the above installation process run this command to start serving it 
 $ npm run start
 ```
 
-To deploy your changes to `gh-pages` branch run this command:
+To deploy your changes to `gh-pages` branch [create new release](https://docs.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) (recommended) **or** run this command:
 
 ```sh
 $ npm run build && ./deploy.sh dist/
