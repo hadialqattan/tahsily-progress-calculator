@@ -8,6 +8,8 @@
 </h4>
 
 <p align="center">
+    <a href="https://github.com/hadialqattan/tahsily-progress-calculator/actions/workflows/lint.yml"><img src="https://github.com/hadialqattan/tahsily-progress-calculator/actions/workflows/lint.yml/badge.svg?branch=main" alt="Lint"></a>
+    <a href="https://github.com/hadialqattan/tahsily-progress-calculator/actions/workflows/cd.yml"><img src="https://github.com/hadialqattan/tahsily-progress-calculator/actions/workflows/cd.yml/badge.svg" alt="CD"></a>
     <img alt="GitHub" src="https://img.shields.io/github/license/hadialqattan/tahsily-progress-calculator">
     <a href="https://deepscan.io/dashboard#view=project&tid=13457&pid=16621&bid=360134"><img src="https://deepscan.io/api/teams/13457/projects/16621/branches/360134/badge/grade.svg" alt="DeepScan grade"></a>
 </p>
