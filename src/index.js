@@ -9,7 +9,7 @@ import './css/rtl.css'
 import './css/main.css'
 
 // JS
-import _ from './js/main'
+import './js/main'
 import './locales/i18n.js'
 import('bootstrap/js/dist/modal')
 import('no-darkreader')

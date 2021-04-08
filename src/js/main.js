@@ -3,7 +3,7 @@ This file contains the main website logic
 + DOM manipulation.
 */
 
-import { tomorrowFormattedDate, userAgreement } from './constants.js'
+import { tomorrowFormattedDate } from './constants.js'
 import {
   updateProgressbar,
   updateReportSpan,

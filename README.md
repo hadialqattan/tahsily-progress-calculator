@@ -21,9 +21,7 @@
 
 ## Installation
 
-You can use it from the [offical website](https://hadialqattan.github.io/tahsily-progress-calculator/).
-
-Also you can install its dependencies using `npm` to run it locally:
+You can use it from the [offical website](https://hadialqattan.github.io/tahsily-progress-calculator/), also you can install its dependencies using `npm` to run it locally:
 
 ```sh
 $ npm i
