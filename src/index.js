@@ -13,7 +13,6 @@ import './js/main'
 import './locales/i18n.js'
 import('bootstrap/js/dist/modal')
 import('no-darkreader')
-import('party-js')
 
 // SVG
 import './fonts/line-awesome-1.3.0/svg/heart.svg'

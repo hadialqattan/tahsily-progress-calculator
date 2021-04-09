@@ -3,6 +3,7 @@ This file contains the main website logic
 + DOM manipulation.
 */
 
+import party from 'party-js'
 import { tomorrowFormattedDate } from './constants.js'
 import {
   updateProgressbar,
