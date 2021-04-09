@@ -253,24 +253,6 @@ a {
   float: none;
   text-align: center;
 }
-@media only screen and (max-width: 575px) {
-  .footer {
-    text-align: center;
-  }
-  .copy-right,
-  .more-info {
-    display: block;
-    text-align: center !important;
-    width: 100% !important;
-  }
-  .more-info {
-    padding-top: 0.25rem;
-    padding-bottom: 0.5rem;
-  }
-  .header {
-    border-bottom-color: rgba(55, 54, 68, 0) !important;
-  }
-}
 .form-control {
   color: rgb(221, 221, 221) !important;
   background-color: rgba(130, 130, 130, 0.1) !important;
@@ -301,6 +283,24 @@ a {
   padding-top: 14px;
   padding-bottom: 8px;
   margin-bottom: -14px;
+}
+@media screen and (max-width: 48em) {
+  .footer {
+    text-align: center;
+  }
+  .copy-right,
+  .more-info {
+    display: block;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .more-info {
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
+  .header {
+    border-bottom-color: rgba(55, 54, 68, 0) !important;
+  }
 }
 @media screen and (min-width: 48em) {
   .jumbotron {

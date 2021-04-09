@@ -37,7 +37,8 @@
     "moreInfo": {
       "terms": "Terms",
       "privacy": "Privacy",
-      "copyright": "Copyright"
+      "copyright": "Copyright",
+      "opensource": "Open source"
     }
   }
 }
