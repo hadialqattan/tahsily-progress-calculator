@@ -18,7 +18,7 @@ body {
   border-bottom: 0.05rem solid #e5e5e5;
 }
 /* Make the masthead heading the same height as the navigation */
-.header h3 {
+.header h1 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 3rem;
