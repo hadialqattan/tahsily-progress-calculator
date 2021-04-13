@@ -1,4 +1,7 @@
 {
+  "meta": {
+    "description": "Tahsily's book progress tracker and calculator."
+  },
   "title": "Tahsily Progress Calculator",
   "labels": {
     "tota": "Total",

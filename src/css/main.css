@@ -267,9 +267,10 @@ a {
 .header {
   border-bottom-color: rgba(55, 54, 68, 0.9) !important;
 }
-.header h3 {
+.header h1 {
   float: none;
   font-weight: 600;
+  font-size: 1.75rem;
   text-align: center;
 }
 .form-control {
