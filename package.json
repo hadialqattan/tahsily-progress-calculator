@@ -43,7 +43,7 @@
     "i18next": "^20.1.0",
     "i18next-browser-languagedetector": "^6.1.0",
     "jquery": "^3.6.0",
-    "no-darkreader": "^0.0.4",
+    "no-darkreader": "^1.0.0",
     "party-js": "^1.0.4"
   },
   "lint-staged": {
