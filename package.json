@@ -1,6 +1,6 @@
 {
   "name": "tahsily-progress-calculator",
-  "version": "0.0.7",
+  "version": "1.0.10",
   "description": "Tahsily's book progress tracker and calculator.",
   "main": "index.js",
   "private": "true",

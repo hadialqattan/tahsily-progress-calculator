@@ -99,7 +99,7 @@ const getPercentagesAvg = () => {
     sum += pagesState[subj].percentage
     i++
   }
-  return Math.round(sum / i)
+  return Math.floor(sum / i)
 }
 
 const getTotalRemainder = () => {

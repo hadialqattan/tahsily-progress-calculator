@@ -12,7 +12,7 @@ const getRemainedPages = (currentPageNum, subjectPages, subjectPagesCount) =>
 
 /* Calculate done percentage based on remained pages */
 const getDonePercentage = (subjectPagesCount, remainedPages) =>
-  Math.round(((subjectPagesCount - remainedPages) / subjectPagesCount) * 100)
+  Math.floor(((subjectPagesCount - remainedPages) / subjectPagesCount) * 100)
 
 /* Calculate date days delta */
 const getDaysDelta = (dateA, dateB) =>
