@@ -93,13 +93,11 @@ const getPercentage = (subj) => pagesState[subj].percentage
 const getRemained = (subj) => pagesState[subj].remained
 
 const getPercentagesAvg = () => {
-  let sum = 0
-  let i = 0
+  let remainedPagesCount = 0
   for (const subj in pagesState) {
-    sum += pagesState[subj].percentage
-    i++
+    remainedPagesCount += pagesState[subj].remained
   }
-  return Math.floor(sum / i)
+  return getDonePercentage(getTotalPagesCount(), remainedPagesCount)
 }
 
 const getTotalRemainder = () => {
